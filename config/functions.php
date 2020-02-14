@@ -15,3 +15,15 @@ if ($_SERVER["REQUEST_URI"] === "/~yuan/UNOCAFE/cart.php") {
     }
 }
 }
+
+
+function msg(){
+    if(isset($_SESSION["msg"])){
+        if($_SESSION["msg"]==="Registered Success"){
+            echo "<script> alert('Registered Sucessfuly')</script>";
+        }else{
+            echo "<script> alert('Register Failed')</script>";
+        }
+        unset($_SESSION["msg"]);
+    }
+}

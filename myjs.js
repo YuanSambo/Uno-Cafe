@@ -18,25 +18,7 @@ $(document).ready(function() {
     });
   });
 
-  
-  $("#register-form").submit(function(e) {
-    e.preventDefault();
-    var data = $(this).serialize();
-    $.ajax({
-      type: "POST",
-      url: "process.php",
-      data: data,
-      success: function(data) {
-        if (data === "Success") {
-          alert("Registered Successfuly");
-          window.location.replace("index.php");
-        } else {
-          alert("Invalid User");
-        }
-      }
-    });
-    alert(data);
-  });
+
 
   $(".product-form").submit(function(e) {
     e.preventDefault();

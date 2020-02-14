@@ -96,7 +96,7 @@ userOnly();
     </div>
 
     <!----REGISTRATION FORM-->
-    <form id="register-form" action="#">
+    <form id="register-form"  method="POST" action="process.php">
         <div class="modal fade pt-5" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">

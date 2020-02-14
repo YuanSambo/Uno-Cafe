@@ -16,6 +16,7 @@
           <p1>Copyright. 2020 Uno Cafe. All rights Reserved.</p1>
       </div>
   </section>
+  <?php msg(); ?>
   <!-- Optional JavaScript -->
   <script src="https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>

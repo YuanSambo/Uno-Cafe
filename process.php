@@ -34,9 +34,10 @@ if (isset($_POST["Register"])) {
 
     if ($db->query("INSERT INTO users(username,password,email)
     VALUES('$username','$hashed_password','$email') ")) {
-      echo "Success";
+        $_SESSION["msg"]="Registered Success";
+        redirect_to("index.php");
     } else {
-      echo "Failed";
+        $_SESSION["msg"] = "Registered Failed";
     }
 }
 
