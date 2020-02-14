@@ -132,6 +132,7 @@ userOnly();
                         </div>
                     </div>
                     <div class="modal-button d-flex justify-content-center">
+                        <input type="hidden" name="Register" value = "Register">
                         <button class="btn btn-deep-orange" name="Register" type="submit">Sign up</button>
                     </div>
     </form>

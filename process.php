@@ -16,18 +16,14 @@ if (isset($_POST["Login"])) {
             if ($row->username === $username && password_verify($password, $row->password)) {
                 $_SESSION["user"] = $username;
                 echo ("Success");
-            } else {
-                echo ("Failed");
-            }
-        }
-
+                die();
+            } 
+        } echo "Failed";
     }
 
 }
 
 //Registration
-
-/* Registration verification*/
 
 if (isset($_POST["Register"])) {
 
@@ -38,10 +34,9 @@ if (isset($_POST["Register"])) {
 
     if ($db->query("INSERT INTO users(username,password,email)
     VALUES('$username','$hashed_password','$email') ")) {
-        redirect_to('index.php');
+      echo "Success";
     } else {
-        redirect_to('index.php');
-
+      echo "Failed";
     }
 }
 
