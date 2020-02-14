@@ -1,6 +1,6 @@
 <?php 
-require "connect.php";
-include "functions.php";
+require "config/connect.php";
+include "config/functions.php";
 userOnly();
 ?>
 <!doctype html>

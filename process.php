@@ -1,6 +1,6 @@
 <?php 
-require ("connect.php");
-require ("functions.php");
+require ("config/connect.php");
+require ("config/functions.php");
 
 
 
