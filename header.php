@@ -110,25 +110,25 @@ userOnly();
                         <div class="md-form mb-5">
                             <i class="fas fa-user prefix grey-text"></i>
                             <label data-error="wrong" data-success="right" for="orangeForm-name"> Username</label>
-                            <input type="text" id="orangeForm-name" name="username" class="form-control validate" required>
+                            <input type="text" id="orangeForm-name" name="username" class="form-control validate" >
                         </div>
                         <div class="md-form mb-5">
                             <i class="fas fa-envelope prefix grey-text"></i>
                             <label data-error="wrong" data-success="right" for="orangeForm-email"> E-mail</label>
-                            <input type="email" id="orangeForm-email" name="email" class="form-control validate" required>
+                            <input type="email" id="orangeForm-email" name="email" class="form-control validate" >
                         </div>
 
                         <div class="md-form mb-4">
                             <i class="fas fa-lock prefix grey-text"></i>
                             <label data-error="wrong" data-success="right" for="orangeForm-pass" required> Password</label>
-                            <input type="password" id="orangeForm-pass" name="password" class="form-control validate" required>
+                            <input type="password" id="orangeForm-pass" name="password" class="form-control validate">
                         </div>
 
                         <div class="md-form mb-4">
                             <i class="fas fa-lock prefix grey-text"></i>
-                            <label data-error="wrong" data-success="right" for="orangeForm-pass" required> Confirm
+                            <label data-error="wrong" data-success="right" for="orangeForm-pass"> Confirm
                                 Password</label>
-                            <input type="password" id="orangeForm-pass" name="cpassword" class="form-control validate" required>
+                            <input type="password" id="orangeForm-cpass" name="cpassword" class="form-control validate">
                         </div>
                     </div>
                     <div class="modal-button d-flex justify-content-center">
