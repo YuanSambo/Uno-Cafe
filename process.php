@@ -47,11 +47,11 @@ if (isset($_POST["Add-to-Cart"])) {
     $product = $_POST["product-title"];
     $price = $_POST["product-price"];
     $desc = $_POST["product-desc"];
-    if (isset($_SESSION["user"])) {
-        if (isset($_SESSION["cart"])) {
 
-            foreach ($_SESSION["cart"] as $index => $value):
-                if (in_array($product, $_SESSION["cart"][$index])) {
+    if (isset($_SESSION["user"])) {                      // Confirmation if the user is logged in first before accessing the cart;
+        if (isset($_SESSION["cart"])) {                  // Checking if the S_SESSION["cart"] is empty;
+            foreach ($_SESSION["cart"] as $index => $value):   
+                if (in_array($product, $_SESSION["cart"][$index])) { // Checking if the item is already in the cart;
                     echo "Already Added";
                     die();
                     break;
@@ -69,7 +69,8 @@ if (isset($_POST["Add-to-Cart"])) {
     }
 }
 
-//Remove Product to Cart
+// Removing product to the $_SESSION["cart"].
+
 if (isset($_POST["remove"])) {
 
     $id = $_POST["index"];

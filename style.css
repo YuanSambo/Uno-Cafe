@@ -199,29 +199,6 @@ h4 {
   color: #5f5c5d !important;
 }
 
-/*.desc {
-  margin: 4em auto;
-  font-size: 1.5em;
-}
-
-.desc li {
-  list-style-type: none;
-  display: inline-block;
-  margin-right: 80px;
-}
-
-.desc li::after {
-  content: "";
-  background: #423d3d;
-  display: block;
-  height: 3px;
-  width: 100px;
-  margin: 20px auto 5px;
-}
-
-.desc ul {
-  text-align: center;
-}*/
 
 h1 {
   margin: 0;
@@ -456,7 +433,7 @@ body {
       rgba(90, 107, 103, 0.548),
       rgba(90, 107, 103, 0.548)
     ),
-    url(oki.jpg);
+    url(img/oki.jpg);
   background-size: cover;
   background-position: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;

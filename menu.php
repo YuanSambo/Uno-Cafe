@@ -24,7 +24,7 @@
                             <div class="product-grid__product-wrapper">
                                 <div class="product-grid__product">
                                     <div class="product-grid__img-wrapper">
-                                        <img src="americano.jpg" width="100%" height="100%" />
+                                        <img src="img/americano.jpg" width="100%" height="100%" />
                                     </div>
                                     <span class="product-grid__title"><?= $row2->product_name ?></span>
                                     <input type="hidden" name="product-title" value="<?= $row2->product_name ?>">

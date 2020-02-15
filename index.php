@@ -39,7 +39,7 @@
 
             <div class="col-md-3 text-center">
                 <div class="img">
-                    <img src="americano.jpg" style="width:80%; height: 100%; border-radius: 100%;" />
+                    <img src="img/americano.jpg" style="width:80%; height: 100%; border-radius: 100%;" />
                 </div>
                 <h2>COFFEE</h2>
                 <p>Try our thick, rich, and creamy hot chocolate. Perfect for the cold weather.</p>
@@ -47,7 +47,7 @@
 
             <div class="col-md-3 text-center">
                 <div class="img">
-                    <img src="americano.jpg" style="width:80%; height: 100%; border-radius: 100%;" />
+                    <img src="img/americano.jpg" style="width:80%; height: 100%; border-radius: 100%;" />
                 </div>
                 <h3>PASTRY</h3>
                 <p>Try our thick, rich, and creamy hot chocolate. Perfect for the cold weather.</p>
@@ -55,7 +55,7 @@
 
             <div class="col-md-3 text-center">
                 <div class="img">
-                    <img src="americano.jpg" style="width:80%; height: 100%; border-radius: 100%;" />
+                    <img src="img/americano.jpg" style="width:80%; height: 100%; border-radius: 100%;" />
                 </div>
                 <h3>PASTRY</h3>
                 <p>Try our thick, rich, and creamy hot chocolate. Perfect for the cold weather.</p>
@@ -63,7 +63,7 @@
 
             <div class="col-md-3 text-center">
                 <div class="img">
-                    <img src="americano.jpg" style="width:80%; height: 100%; border-radius: 100%;" />
+                    <img src="img/americano.jpg" style="width:80%; height: 100%; border-radius: 100%;" />
                 </div>
                 <h3>PASTRY</h3>
                 <p>Try our thick, rich, and creamy hot chocolate. Perfect for the cold weather.</p>
