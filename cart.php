@@ -49,10 +49,6 @@ include("header.php") ?>
                 <div class="totals-value" id="cart-subtotal"></div>
             </div>
             <div class="totals-item">
-                <label>Tax (12%)</label>
-                <div class="totals-value" id="cart-tax"></div>
-            </div>
-            <div class="totals-item">
                 <label>Shipping</label>
                 <div class="totals-value" id="cart-shipping"></div>
             </div>
