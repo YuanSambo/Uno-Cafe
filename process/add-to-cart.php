@@ -6,6 +6,7 @@ require "../config/functions.php";
 // Add to Cart
 if (isset($_POST["Add-to-Cart"])) {
 
+$id = $_POST["id"];
 $product = $_POST["product-title"];
 $price = $_POST["product-price"];
 $desc = $_POST["product-desc"];
@@ -20,11 +21,11 @@ die();
 break;
 }
 endforeach;
-array_push($_SESSION["cart"], array("products" => $product, "price" => $price, "desc" => $desc ,"img" => $img));
+array_push($_SESSION["cart"], array("id"=>$id,"products" => $product, "price" => $price, "desc" => $desc ,"img" => $img));
 echo 'Success';
 
 } else {
-$_SESSION["cart"][0] = array("products" => $product, "price" => $price, "desc" => $desc,"img" => $img);
+$_SESSION["cart"][0] = array("id" => $id,"products" => $product, "price" => $price, "desc" => $desc,"img" => $img);
 echo 'Success';
 }
 } else {

@@ -626,7 +626,7 @@ label {
   text-align: center;
 }
 .product .product-image img {
-  width: 100px;
+  width: 80%;
 }
 .product .product-details .product-title {
   margin-right: 20px;

@@ -16,54 +16,55 @@ include("header.php") ?>
             <label class="product-line-price">Total</label>
         </div>
         <!-- <form class="cart-form"> -->
-            <?php
-            if (isset($_SESSION["cart"])) :
-                foreach ($_SESSION["cart"] as $i => $value) : ?>
-                    <div class="product">
-                        <div class="product-image">
-                            <img src="https://s.cdpn.io/3/dingo-dog-bones.jpg" />
-                        </div>
-                        <div class="product-details">
-                            <div class="product-title"><?= $_SESSION["cart"][$i]["products"] ?></div>
-                            <p class="product-description">
-                                <?= $_SESSION["cart"][$i]["desc"] ?>
-                            </p>
-                        </div>
-                        <div class="product-price"><?= $_SESSION["cart"][$i]["price"] ?></div>
-                        <div class="product-quantity">
-                            <input type="number" value="1" min="1" />
-                        </div>
-                        <div class="product-removal" id="<?= $i ?>">
-                          <button class="remove-product">
-                                Remove
-                            </button>
-                        </div>
-                        <div class="product-line-price"><?= $_SESSION["cart"][$i]["price"] ?></div>
+        <?php
+        if (isset($_SESSION["cart"])) :
+            foreach ($_SESSION["cart"] as $i => $value) : ?>
+                <div class="product">
+                    <input type="hidden" class="product-id" name="product-id" value="<?= $_SESSION["cart"][$i]["id"]?>">
+                    <div class="product-image">
+                        <img src="<?= $_SESSION["cart"][$i]["img"] ?>" />
                     </div>
-            <?php endforeach;
-            endif; ?>
-            <div class="totals">
-                <div class="totals-item">
-                    <label>Subtotal</label>
-                    <div class="totals-value" id="cart-subtotal"></div>
+                    <div class="product-details">
+                        <div class="product-title"><?= $_SESSION["cart"][$i]["products"] ?></div>
+                        <p class="product-description">
+                            <?= $_SESSION["cart"][$i]["desc"] ?>
+                        </p>
+                    </div>
+                    <div class="product-price"><?= $_SESSION["cart"][$i]["price"] ?></div>
+                    <div class="product-quantity">
+                        <input type="number" value="1" min="1" />
+                    </div>
+                    <div class="product-removal" id="<?= $i ?>">
+                        <button class="remove-product">
+                            Remove
+                        </button>
+                    </div>
+                    <div class="product-line-price"><?= $_SESSION["cart"][$i]["price"] ?></div>
                 </div>
-                <div class="totals-item">
-                    <label>Tax (12%)</label>
-                    <div class="totals-value" id="cart-tax"></div>
-                </div>
-                <div class="totals-item">
-                    <label>Shipping</label>
-                    <div class="totals-value" id="cart-shipping"></div>
-                </div>
-                <div class="totals-item totals-item-total">
-                    <label>Grand Total</label>
-                    <div class="totals-value" id="cart-total"></div>
-                </div>
+        <?php endforeach;
+        endif; ?>
+        <div class="totals">
+            <div class="totals-item">
+                <label>Subtotal</label>
+                <div class="totals-value" id="cart-subtotal"></div>
             </div>
-            <input type="hidden" name="checkout" value="checkout"> 
-            <button class="checkout"  data-toggle="modal" data-target="#exampleModal">
-                Checkout
-            </button>
+            <div class="totals-item">
+                <label>Tax (12%)</label>
+                <div class="totals-value" id="cart-tax"></div>
+            </div>
+            <div class="totals-item">
+                <label>Shipping</label>
+                <div class="totals-value" id="cart-shipping"></div>
+            </div>
+            <div class="totals-item totals-item-total">
+                <label>Grand Total</label>
+                <div class="totals-value" id="cart-total"></div>
+            </div>
+        </div>
+        <input type="hidden" name="checkout" value="checkout">
+        <button class="checkout" data-toggle="modal" data-target="#exampleModal">
+            Checkout
+        </button>
         <!-- </form> -->
     </div>
 </div>
@@ -79,13 +80,17 @@ include("header.php") ?>
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                  <ul id= modal-checkout></ul>
-            </div>
-            <div class="modal-footer">
-                </button>
-                <button type="button" class="btn-order">Place Order</button>
-            </div>
+            <form class="place-order">
+                <div class="modal-body">
+                    <p>Enter Address</p>
+                    <textarea name="address" cols=55" rows="5" placeholder="Deliver Address.." required></textarea>
+                </div>
+                <div class="modal-footer">
+                    </button>
+                    <!-- <input type="hidden" name="order" value = "place-order"> -->
+                    <button type="submit" class="btn btn-order">Place Order</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

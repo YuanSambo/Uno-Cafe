@@ -1,11 +1,11 @@
-$(document).ready(function() { 
+$(document).ready(function() {
 
   $("#login-form").submit(function(e) {
     e.preventDefault();
     var data = $(this).serialize();
     $.ajax({
       type: "POST",
-      url: "process.php",
+      url: "/~yuan/UNOCAFE/process/login.php",
       data: data,
       success: function(data) {
         if (data === "Success") {
@@ -25,7 +25,7 @@ $(document).ready(function() {
     var data = $(this).serialize();
     $.ajax({
       type: "POST",
-      url: "process.php",
+      url: "/~yuan/UNOCAFE/process/add-to-cart.php",
       data: data,
       success: function(data) {
         if (data === "Success") {
@@ -33,14 +33,16 @@ $(document).ready(function() {
         } else if (data === "Already Added") {
           alert("Already Added to the Cart");
         } else if (data == "Please Login First") {
-          alert(data);
+          alert("Please Login First")
         } else {
           alert("Invalid User");
-          alert(data);
         }
+
       }
     });
   });
+
+
 
   $(".remove-product").click(function(e) {
     var index = $(this)
@@ -49,9 +51,70 @@ $(document).ready(function() {
     var remove = "remove";
     $.ajax({
       type: "POST",
-      url: "process.php",
+      url: "/~yuan/UNOCAFE/process/remove-product.php",
       data: { index: index, remove: remove },
       success: function(data) {}
+    });
+  });
+
+  $(".place-order").submit(function(e) {
+    e.preventDefault();
+
+    var address = $(".place-order")
+      .children(".modal-body")
+      .children("textarea")
+      .val();
+    var total = $("#cart-total").text();
+    var order = "order";
+
+    $.ajax({
+      type: "POST",
+      url: "/~yuan/UNOCAFE/process/order.php",
+      data: {
+        address: address,
+        total: total,
+        order: order
+      },
+      success: function(data) {
+        if (data === "ongoing") {
+          alert("You still have a ongoing delivery");
+          window.location.replace("cart.php");
+        } else {
+          $(".product").each(function() {
+            var product_id=$(".product-id").val();
+            var product = $(this)
+              .children(".product-details")
+              .children(".product-title")
+              .text();
+            var qty = $(this)
+              .children(".product-quantity")
+              .children("input")
+              .val();
+            var price = $(this)
+              .children(".product-line-price")
+              .text();
+            var order_details = "order";
+            var order_id = data;
+
+            $.ajax({
+              type: "POST",
+              url: "/~yuan/UNOCAFE/process/order.php",
+              data: {
+                product_id:product_id,
+                product: product,
+                qty: qty,
+                price: price,
+                order_id: order_id,
+                order_details: order_details
+              },
+              success: function(data) {}
+              
+            });
+          });
+          alert("Order Successfully");
+          window.location.replace("cart.php");
+        }
+      }
     });
   });
 
@@ -128,26 +191,26 @@ $(document).ready(function() {
     });
   }
 
-  /* Checkout */
-  function putCheckout(checkout) {
-    $("#modal-checkout").text("");
-    $(".product").each(function() {
-      var product = $(this)
-        .children(".product-details")
-        .children(".product-title")
-        .text();
-      var qty = $(this)
-        .children(".product-quantity")
-        .children("input")
-        .val();
-      var price = $(this)
-        .children(".product-line-price")
-        .text();
-      $("#modal-checkout").append(
-        "<li>" + product + "  " + qty + "pcs" + " " + price + "</li><br>"
-      );
-    });
-  }
+  // /* Checkout */
+  // function putCheckout(checkout) {
+  //   $("#modal-checkout").text("");
+  //   $(".product").each(function() {
+  //     var product = $(this)
+  //       .children(".product-details")
+  //       .children(".product-title")
+  //       .text();
+  //     var qty = $(this)
+  //       .children(".product-quantity")
+  //       .children("input")
+  //       .val();
+  //     var price = $(this)
+  //       .children(".product-line-price")
+  //       .text();
+  //     $("#modal-checkout").append(
+  //       "<li>" + product + "  " + qty + "pcs" + " " + price + "</li><br>"
+  //     );
+  //   });
+  // }
 
   /* Remove item from cart */
   function removeItem(removeButton) {

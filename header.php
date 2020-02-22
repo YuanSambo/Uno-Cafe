@@ -1,4 +1,4 @@
-<?php 
+<?php
 require "config/connect.php";
 include "config/functions.php";
 userOnly();
@@ -17,13 +17,13 @@ userOnly();
     <link rel="stylesheet" href="fontawesome/css/all.css">
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    
+
 </head>
 <body>
     <!----NavigationBar---->
     <section id="nav-bar">
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="#"><img src="img/unocafelogo.png"></a>
+            <a class="navbar-brand" href="index.php"><img src="img/unocafelogo.png"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -85,7 +85,7 @@ userOnly();
                         <button class="btn btn-default" type="submit" name="Login" id="login-btn">Login</button>
                         <input type="hidden" name="Login" value="Login">
                     </div>
-                    <p>Forgot Password? </p>
+                    <p><a href="#">Forgot Password?</a></p>
     </form>
     <div class="modal-footer d-flex justify-content-center">
         <p>Not Registered?</p>
@@ -96,7 +96,7 @@ userOnly();
     </div>
 
     <!----REGISTRATION FORM-->
-    <form id="register-form"  method="POST" action="process.php">
+    <form id="register-form" method="POST" action="/~yuan/UNOCAFE/process/register.php">
         <div class="modal fade pt-5" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -110,12 +110,12 @@ userOnly();
                         <div class="md-form mb-5">
                             <i class="fas fa-user prefix grey-text"></i>
                             <label data-error="wrong" data-success="right" for="orangeForm-name"> Username</label>
-                            <input type="text" id="orangeForm-name" name="username" class="form-control validate" >
+                            <input type="text" id="orangeForm-name" name="username" class="form-control validate">
                         </div>
                         <div class="md-form mb-5">
                             <i class="fas fa-envelope prefix grey-text"></i>
                             <label data-error="wrong" data-success="right" for="orangeForm-email"> E-mail</label>
-                            <input type="email" id="orangeForm-email" name="email" class="form-control validate" >
+                            <input type="email" id="orangeForm-email" name="email" class="form-control validate">
                         </div>
 
                         <div class="md-form mb-4">
@@ -132,7 +132,7 @@ userOnly();
                         </div>
                     </div>
                     <div class="modal-button d-flex justify-content-center">
-                        <input type="hidden" name="Register" value = "Register">
+                        <input type="hidden" name="Register" value="Register">
                         <button class="btn btn-deep-orange" name="Register" type="submit">Sign up</button>
                     </div>
     </form>

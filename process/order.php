@@ -30,14 +30,14 @@ if (isset($_POST["order"])) {
 //Order Details
 
 if (isset($_POST["order_details"])) {
-
+    $product_id=$_POST["product_id"];
     $product = $_POST["product"];
     $qty = $_POST["qty"];
     $price = $_POST["price"];
     $order_id = $_POST["order_id"];
 
-    if ($db->query("INSERT INTO order_details (product,price,quantity,order_id)
-    VALUES ('$product','$price','$qty','$order_id') ")) {
+    if ($db->query("INSERT INTO order_details (product_id,price,quantity,order_id)
+    VALUES ('$product_id','$price','$qty','$order_id') ")) {
         echo "Success";
     } else
         echo $db->error;

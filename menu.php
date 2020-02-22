@@ -7,16 +7,23 @@
             <ul>
                 <?php $results = $db->query("SELECT * FROM product_categ ORDER BY id ");
                 while ($row = $results->fetch_object()) : ?>
-                    <li><a href="#"><?= $row->categ ?></a></li>
+                    <li><a href="#<?= $row->categ?>"><?= $row->categ ?></a></li>
                 <?php endwhile; ?>
             </ul>
         </div>
 
         <div class="content">
+
             <!-- content here -->
             <?php $results2 = $db->query("SELECT* FROM product_categ ORDER BY id ");
             while ($row2 = $results2->fetch_object()) : ?>
-
+                <div class="variation text-center">
+                    <ul>
+                        <li>
+                            <a name="<?= $row2->categ ?>"><?= $row2->categ ?></a>
+                        </li>
+                    </ul>
+                </div>
                 <div class="product-grid product-grid--flexbox">
                     <div class="product-grid__wrapper">
                         <?php $results3 = $db->query("SELECT* FROM products WHERE categ=$row2->id");
@@ -24,10 +31,12 @@
                             <!-- Product list start here -->
                             <!-- Single product -->
                             <form class="product-form" action="#">
+                            <input type="hidden" name="id" value="<?= $row3->id?>">
                                 <div class="product-grid__product-wrapper">
                                     <div class="product-grid__product">
                                         <div class="product-grid__img-wrapper">
-                                            <img src="img/americano.jpg" width="100%" height="100%" />
+                                            <img src="<?= $row3->img ?>" width="100%" height="100%" />
+                                            <input type="hidden" name="product-img" value="<?= $row3->img ?>">
                                         </div>
                                         <span class="product-grid__title"><?= $row3->product_name ?></span>
                                         <input type="hidden" name="product-title" value="<?= $row3->product_name ?>">
@@ -49,11 +58,6 @@
                 </div>
             <?php endwhile; ?>
         </div>
-
-
     </div>
 </div>
-
-
-
 <?php include("footer.php") ?>
